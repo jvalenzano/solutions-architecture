@@ -1,0 +1,26 @@
+# cloudbuild.yaml
+
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/api-gateway:$COMMIT_SHA', '.']
+
+# Push the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/api-gateway:$COMMIT_SHA']
+
+# Deploy to Cloud Run
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - 'run'
+  - 'deploy'
+  - 'api-gateway-fs-chatbot'
+  - '--image'
+  - 'gcr.io/$PROJECT_ID/api-gateway:$COMMIT_SHA'
+  - '--region'
+  - '${_REGION}'
+  - '--platform'
+  - 'managed'
+
+images:
+- gcr.io/$PROJECT_ID/api-gateway:$COMMIT_SHA

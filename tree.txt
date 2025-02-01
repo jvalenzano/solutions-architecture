@@ -2,18 +2,18 @@
 |--frameworks
 |   |--checklists
 |   |--patterns
-|   --templates
-|       --solution-architecture-template.md
+|   |--templates
+|       |--solution-architecture-template.md
 |--standards
 |   |--compliance
 |   |--security
-|   |   --security-standards.md
-|   --technologies
+|   |   |--security-standards.md
+|   |--technologies
 |--tools
 |   |--scripts
-|   --templates
+|   |--templates
 |--use-cases
-|   --fs-chatbot
+|   |--fs-chatbot
 |       |--diagrams
 |       |   |--c4-models
 |       |   |   |--rendered
@@ -22,33 +22,33 @@
 |       |   |   |   |   |--Diagram 2 - Container Diagram (Level 2).png
 |       |   |   |   |   |--Diagram 3 - Component Diagram - Data Integration Container (Level 3).png
 |       |   |   |   |   |--Diagram 4 - Sequence Diagram - Example Use Case (Trail Status Inquiry).png
-|       |   |   |   |   --Diagram 5 - Full Deployment Diagram (optional).png
-|       |   |   |   --svg
+|       |   |   |   |   |--Diagram 5 - Full Deployment Diagram (optional).png
+|       |   |   |   |--svg
 |       |   |   |       |--Diagram 1 - System Context Diagram (Level 1).svg
 |       |   |   |       |--Diagram 2 - Container Diagram (Level 2).svg
 |       |   |   |       |--Diagram 3 - Component Diagram - Data Integration Container (Level 3).svg
 |       |   |   |       |--Diagram 4 - Sequence Diagram - Example Use Case (Trail Status Inquiry).svg
-|       |   |   |       --Diagram 5 - Full Deployment Diagram (optional).svg
+|       |   |   |       |--Diagram 5 - Full Deployment Diagram (optional).svg
 |       |   |   --source
 |       |   |       |--container.md
 |       |   |       |--data-integration.md
 |       |   |       |--deployment.md
-|       |   |       --system-context.md
+|       |   |       |--system-context.md
 |       |   |--sequence
 |       |   |   |--rendered
 |       |   |   |   |--png
-|       |   |   |   --svg
-|       |   |   --source
-|       |   |       --trail-status.md
+|       |   |   |   |--svg
+|       |   |   |--source
+|       |   |       |--trail-status.md
 |       |   |--README.md
-|       |   --update-diagrams.ps1
+|       |   |--update-diagrams.ps1
 |       |--docs
-|       |   --architecture-overview.md
-|       --specifications
-|           --integration-specifications.md
+|       |   |--architecture-overview.md
+|       |--specifications
+|           |--integration-specifications.md
 |--generate-tree.ps1
 |--README.md
 |--setup-diagrams.ps1
 |--setup-initial-docs.ps1
 |--setup-repo.ps1
---tree.txt
+|--tree.txt

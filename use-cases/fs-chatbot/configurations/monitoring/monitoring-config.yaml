@@ -1,0 +1,57 @@
+# monitoring-config.yaml
+
+dashboard_json: |
+  {
+    "displayName": "Forest Service Chatbot Dashboard",
+    "gridLayout": {
+      "columns": "2",
+      "widgets": [
+        {
+          "title": "Request Latency",
+          "xyChart": {
+            "dataSets": [{
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"custom.googleapis.com/chatbot/latency\"",
+                  "aggregation": {
+                    "perSeriesAligner": "ALIGN_PERCENTILE_99"
+                  }
+                }
+              }
+            }]
+          }
+        },
+        {
+          "title": "Error Rate",
+          "xyChart": {
+            "dataSets": [{
+              "timeSeriesQuery": {
+                "timeSeriesFilter": {
+                  "filter": "metric.type=\"custom.googleapis.com/chatbot/errors\"",
+                  "aggregation": {
+                    "perSeriesAligner": "ALIGN_RATE"
+                  }
+                }
+              }
+            }]
+          }
+        }
+      ]
+    }
+  }
+
+alerting_policies:
+  - display_name: "High Error Rate"
+    conditions:
+      - display_name: "Error Rate > 1%"
+        condition_threshold:
+          filter: "metric.type=\"custom.googleapis.com/chatbot/errors\""
+          aggregations:
+            - alignment_period: 300s
+              per_series_aligner: ALIGN_RATE
+          comparison: COMPARISON_GT
+          threshold_value: 0.01
+          duration: 300s
+    notification_channels:
+      - type: "email"
+        email_address: "oncall@example.com"

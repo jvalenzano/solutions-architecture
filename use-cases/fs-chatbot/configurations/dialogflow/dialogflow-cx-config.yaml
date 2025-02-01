@@ -1,0 +1,32 @@
+# dialogflow-cx-config.yaml
+
+displayName: "Forest Service Chatbot"
+defaultLanguageCode: "en"
+timeZone: "America/New_York"
+description: "Forest Service public information chatbot"
+enableStackdriverLogging: true
+enableSpellCorrection: true
+speechToTextSettings:
+  enableSpeechAdaptation: true
+
+flows:
+  - displayName: "Default Start Flow"
+    description: "Entry point for conversation"
+    eventHandlers:
+      - event: "sys.no-match-default"
+        triggerFulfillment:
+          messages:
+            - text:
+                text: ["I didn't understand. Can you rephrase that?"]
+      - event: "sys.no-input-default"
+        triggerFulfillment:
+          messages:
+            - text:
+                text: ["I didn't catch that. Could you please repeat?"]
+
+webhooks:
+  - displayName: "Data Integration Webhook"
+    genericWebService:
+      uri: "https://us-central1-${PROJECT_ID}.cloudfunctions.net/data-integration"
+      requestHeaders:
+        Authorization: "Bearer ${WEBHOOK_TOKEN}"
