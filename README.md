@@ -1,6 +1,4 @@
-﻿# Create an updated README.md content
-@"
-# Solutions Architecture Repository
+﻿# Solutions Architecture Repository
 
 ## Overview
 This repository contains solution architecture documentation, templates, and standards for AI/ML projects, starting with the Forest Service Chatbot implementation.
