@@ -1,0 +1,30 @@
+﻿Folder PATH listing
+Volume serial number is B227-BD96
+C:.
+ª   README.md
+ª   setup-initial-docs.ps1
+ª   setup-repo.ps1
+ª   tree.txt
+ª   
++---frameworks
+ª   +---checklists
+ª   +---patterns
+ª   +---templates
+ª           solution-architecture-template.md
+ª           
++---standards
+ª   +---compliance
+ª   +---security
+ª   ª       security-standards.md
+ª   ª       
+ª   +---technologies
++---tools
+ª   +---scripts
+ª   +---templates
++---use-cases
+    +---fs-chatbot
+        +---diagrams
+        +---docs
+        ª       architecture-overview.md
+        ª       
+        +---specifications
