@@ -1,30 +1,54 @@
-﻿Folder PATH listing
-Volume serial number is B227-BD96
-C:.
-ª   README.md
-ª   setup-initial-docs.ps1
-ª   setup-repo.ps1
-ª   tree.txt
-ª   
-+---frameworks
-ª   +---checklists
-ª   +---patterns
-ª   +---templates
-ª           solution-architecture-template.md
-ª           
-+---standards
-ª   +---compliance
-ª   +---security
-ª   ª       security-standards.md
-ª   ª       
-ª   +---technologies
-+---tools
-ª   +---scripts
-ª   +---templates
-+---use-cases
-    +---fs-chatbot
-        +---diagrams
-        +---docs
-        ª       architecture-overview.md
-        ª       
-        +---specifications
+﻿solutions-architecture/
+|--frameworks
+|   |--checklists
+|   |--patterns
+|   --templates
+|       --solution-architecture-template.md
+|--standards
+|   |--compliance
+|   |--security
+|   |   --security-standards.md
+|   --technologies
+|--tools
+|   |--scripts
+|   --templates
+|--use-cases
+|   --fs-chatbot
+|       |--diagrams
+|       |   |--c4-models
+|       |   |   |--rendered
+|       |   |   |   |--png
+|       |   |   |   |   |--Diagram 1 - System Context Diagram (Level 1).png
+|       |   |   |   |   |--Diagram 2 - Container Diagram (Level 2).png
+|       |   |   |   |   |--Diagram 3 - Component Diagram - Data Integration Container (Level 3).png
+|       |   |   |   |   |--Diagram 4 - Sequence Diagram - Example Use Case (Trail Status Inquiry).png
+|       |   |   |   |   --Diagram 5 - Full Deployment Diagram (optional).png
+|       |   |   |   --svg
+|       |   |   |       |--Diagram 1 - System Context Diagram (Level 1).svg
+|       |   |   |       |--Diagram 2 - Container Diagram (Level 2).svg
+|       |   |   |       |--Diagram 3 - Component Diagram - Data Integration Container (Level 3).svg
+|       |   |   |       |--Diagram 4 - Sequence Diagram - Example Use Case (Trail Status Inquiry).svg
+|       |   |   |       --Diagram 5 - Full Deployment Diagram (optional).svg
+|       |   |   --source
+|       |   |       |--container.md
+|       |   |       |--data-integration.md
+|       |   |       |--deployment.md
+|       |   |       --system-context.md
+|       |   |--sequence
+|       |   |   |--rendered
+|       |   |   |   |--png
+|       |   |   |   --svg
+|       |   |   --source
+|       |   |       --trail-status.md
+|       |   |--README.md
+|       |   --update-diagrams.ps1
+|       |--docs
+|       |   --architecture-overview.md
+|       --specifications
+|           --integration-specifications.md
+|--generate-tree.ps1
+|--README.md
+|--setup-diagrams.ps1
+|--setup-initial-docs.ps1
+|--setup-repo.ps1
+--tree.txt
